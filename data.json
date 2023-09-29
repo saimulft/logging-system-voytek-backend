@@ -1,0 +1,475 @@
+[
+    {
+        "_id": "65150ee5dad0c2347337220e",
+        "project_name": "chat ai",
+        "client_name": "timu",
+        "project_code": "E-44",
+        "project_notes": "this is a projects note",
+        "project_logs": [
+            {
+                "log_name": "fixing",
+                "log_id": "343ll343",
+                "log_description": {
+                    "risk_description": [
+                        {
+                            "content": "risk description content",
+                            "date": "2023-04-02T00:00:00Z",
+                            "id": "3443433322"
+                        }
+                    ],
+                    "control_description": [
+                        {
+                            "content": "risk control content",
+                            "date": "2023-07-02T00:00:00Z",
+                            "id": "3434333322"
+                        }
+                    ]
+                },
+                "description_date": "2023-04-02T00:00:00Z",
+                "log_type": "Risk",
+                "log_due_date": "2023-04-02T00:00:00Z",
+                "log_status": "open",
+                "log_tags": [
+                    "development",
+                    "tech",
+                    "web"
+                ],
+                "assigned": {
+                    "name": "timu",
+                    "image": "https://i.ibb.co/QHfKVfL/profile2.jpg",
+                    "assigned_person_id": "34343l4"
+                }
+            }
+        ]
+    },
+    {
+        "_id": "65150ee5dad0c2347337220f",
+        "project_name": "data analysis",
+        "client_name": "John",
+        "project_code": "E-45",
+        "project_notes": "this is another project note",
+        "project_logs": [
+            {
+                "log_name": "bug fixing",
+                "log_id": "343ll344",
+                "log_description": {
+                    "risk_description": [
+                        {
+                            "content": "another risk description",
+                            "date": "2023-05-02T00:00:00Z",
+                            "id": "34343334322"
+                        }
+                    ],
+                    "control_description": [
+                        {
+                            "content": "another risk control description",
+                            "date": "2023-08-02T00:00:00Z",
+                            "id": "343434333232"
+                        }
+                    ]
+                },
+                "description_date": "2023-05-02T00:00:00Z",
+                "log_type": "Risk",
+                "log_due_date": "2023-06-02T00:00:00Z",
+                "log_status": "open",
+                "log_tags": [
+                    "development",
+                    "bug",
+                    "software"
+                ],
+                "assigned": {
+                    "name": "John",
+                    "image": "https://i.ibb.co/QHfKVfL/profile3.jpg",
+                    "assigned_person_id": "34343l5"
+                }
+            }
+        ]
+    },
+    {
+        "_id": "65150ee5dad0c23473372210",
+        "project_name": "mobile app",
+        "client_name": "Alice",
+        "project_code": "E-46",
+        "project_notes": "mobile app project notes",
+        "project_logs": [
+            {
+                "log_name": "feature development",
+                "log_id": "343ll345",
+                "log_description": {
+                    "risk_description": [
+                        {
+                            "content": "mobile app risk description",
+                            "date": "2023-06-02T00:00:00Z",
+                            "id": "3434333322"
+                        }
+                    ],
+                    "control_description": [
+                        {
+                            "content": "mobile app risk control description",
+                            "date": "2023-09-02T00:00:00Z",
+                            "id": "3433433322"
+                        }
+                    ]
+                },
+                "description_date": "2023-06-02T00:00:00Z",
+                "log_type": "Action",
+                "log_due_date": "2023-07-02T00:00:00Z",
+                "log_status": "in-progress",
+                "log_tags": [
+                    "mobile",
+                    "app",
+                    "feature"
+                ],
+                "assigned": {
+                    "name": "Alice",
+                    "image": "https://i.ibb.co/QHfKVfL/profile4.jpg",
+                    "assigned_person_id": "34343l6"
+                }
+            }
+        ]
+    },
+    {
+        "_id": "65150ee5dad0c23473372211",
+        "project_name": "website redesign",
+        "client_name": "Bob",
+        "project_code": "E-47",
+        "project_notes": "website redesign project notes",
+        "project_logs": [
+            {
+                "log_name": "design review",
+                "log_id": "343ll346",
+                "log_description": {
+                    "risk_description": [
+                        {
+                            "content": "design risk description",
+                            "date": "2023-07-02T00:00:00Z",
+                            "id": "34343433322"
+                        }
+                    ],
+                    "control_description": [
+                        {
+                            "content": "design risk control description",
+                            "date": "2023-10-02T00:00:00Z",
+                            "id": "34343334322"
+                        }
+                    ]
+                },
+                "description_date": "2023-07-02T00:00:00Z",
+                "log_type": "Risk",
+                "log_due_date": "2023-08-02T00:00:00Z",
+                "log_status": "closed",
+                "log_tags": [
+                    "web",
+                    "design",
+                    "redesign"
+                ],
+                "assigned": {
+                    "name": "Bob",
+                    "image": "https://i.ibb.co/QHfKVfL/profile5.jpg",
+                    "assigned_person_id": "34343l7"
+                }
+            }
+        ]
+    },
+    {
+        "_id": "65150ee5dad0c23473372212",
+        "project_name": "database optimization",
+        "client_name": "Eva",
+        "project_code": "E-48",
+        "project_notes": "database optimization notes",
+        "project_logs": [
+            {
+                "log_name": "performance analysis",
+                "log_id": "343ll347",
+                "log_description": {
+                    "risk_description": [
+                        {
+                            "content": "performance risk description",
+                            "date": "2023-08-02T00:00:00Z",
+                            "id": "34343343322"
+                        }
+                    ],
+                    "control_description": [
+                        {
+                            "content": "performance risk control description",
+                            "date": "2023-11-02T00:00:00Z",
+                            "id": "3243433322"
+                        }
+                    ]
+                },
+                "description_date": "2023-08-02T00:00:00Z",
+                "log_type": "Action",
+                "log_due_date": "2023-09-02T00:00:00Z",
+                "log_status": "in-progress",
+                "log_tags": [
+                    "database",
+                    "optimization",
+                    "performance"
+                ],
+                "assigned": {
+                    "name": "Eva",
+                    "image": "https://i.ibb.co/QHfKVfL/profile6.jpg",
+                    "assigned_person_id": "34343l8"
+                }
+            }
+        ]
+    },
+    {
+        "_id": "65150ee5dad0c23473372213",
+        "project_name": "marketing campaign",
+        "client_name": "Mark",
+        "project_code": "E-49",
+        "project_notes": "marketing campaign notes",
+        "project_logs": [
+            {
+                "log_name": "campaign launch",
+                "log_id": "343ll2348",
+                "log_description": {
+                    "risk_description": [
+                        {
+                            "content": "marketing risk description",
+                            "date": "2023-09-02T00:00:00Z",
+                            "id": "34334433322"
+                        }
+                    ],
+                    "control_description": [
+                        {
+                            "content": "marketing risk control description",
+                            "date": "2023-12-02T00:00:00Z",
+                            "id": "34343334322"
+                        }
+                    ]
+                },
+                "description_date": "2023-09-02T00:00:00Z",
+                "log_type": "Risk",
+                "log_due_date": "2023-10-02T00:00:00Z",
+                "log_status": "open",
+                "log_tags": [
+                    "marketing",
+                    "campaign",
+                    "launch"
+                ],
+                "assigned": {
+                    "name": "Mark",
+                    "image": "https://i.ibb.co/QHfKVfL/profile7.jpg",
+                    "assigned_person_id": "34343l9"
+                }
+            }
+        ]
+    },
+    {
+        "_id": "65150ee5dad0c23473372214",
+        "project_name": "inventory management",
+        "client_name": "Sophia",
+        "project_code": "E-50",
+        "project_notes": "inventory management notes",
+        "project_logs": [
+            {
+                "log_name": "stock analysis",
+                "log_id": "343ll349",
+                "log_description": {
+                    "risk_description": [
+                        {
+                            "content": "inventory risk description",
+                            "date": "2023-10-02T00:00:00Z",
+                            "id": "3434353322"
+                        }
+                    ],
+                    "control_description": [
+                        {
+                            "content": "inventory risk control description",
+                            "date": "2023-01-02T00:00:00Z",
+                            "id": "3434336322"
+                        }
+                    ]
+                },
+                "description_date": "2023-10-02T00:00:00Z",
+                "log_type": "Action",
+                "log_due_date": "2023-11-02T00:00:00Z",
+                "log_status": "in-progress",
+                "log_tags": [
+                    "inventory",
+                    "management",
+                    "analysis"
+                ],
+                "assigned": {
+                    "name": "Sophia",
+                    "image": "https://i.ibb.co/QHfKVfL/profile8.jpg",
+                    "assigned_person_id": "34343l10"
+                }
+            }
+        ]
+    },
+    {
+        "_id": "65150ee5dad0c23473372215",
+        "project_name": "customer support",
+        "client_name": "David",
+        "project_code": "E-51",
+        "project_notes": "customer support notes",
+        "project_logs": [
+            {
+                "log_name": "ticket resolution",
+                "log_id": "343ll350",
+                "log_description": {
+                    "risk_description": [
+                        {
+                            "content": "support risk description",
+                            "date": "2023-11-02T00:00:00Z",
+                            "id": "3434337322"
+                        }
+                    ],
+                    "control_description": [
+                        {
+                            "content": "support risk control description",
+                            "date": "2023-02-02T00:00:00Z",
+                            "id": "3434333322"
+                        }
+                    ]
+                },
+                "description_date": "2023-11-02T00:00:00Z",
+                "log_type": "Action",
+                "log_due_date": "2023-12-02T00:00:00Z",
+                "log_status": "open",
+                "log_tags": [
+                    "customer",
+                    "support",
+                    "ticket"
+                ],
+                "assigned": {
+                    "name": "David",
+                    "image": "https://i.ibb.co/QHfKVfL/profile9.jpg",
+                    "assigned_person_id": "34343l11"
+                }
+            }
+        ]
+    },
+    {
+        "_id": "65150ee5dad0c23473372216",
+        "project_name": "product development",
+        "client_name": "Linda",
+        "project_code": "E-52",
+        "project_notes": "product development notes",
+        "project_logs": [
+            {
+                "log_name": "feature planning",
+                "log_id": "343ll351",
+                "log_description": {
+                    "risk_description": [
+                        {
+                            "content": "product risk description",
+                            "date": "2023-12-02T00:00:00Z",
+                            "id": "34343663322"
+                        }
+                    ],
+                    "control_description": [
+                        {
+                            "content": "product risk control description",
+                            "date": "2023-03-02T00:00:00Z",
+                            "id": "34343673322"
+                        }
+                    ]
+                },
+                "description_date": "2023-12-02T00:00:00Z",
+                "log_type": "Action",
+                "log_due_date": "2023-02-03T00:00:00Z",
+                "log_status": "in-progress",
+                "log_tags": [
+                    "product",
+                    "development",
+                    "planning"
+                ],
+                "assigned": {
+                    "name": "Linda",
+                    "image": "https://i.ibb.co/QHfKVfL/profile10.jpg",
+                    "assigned_person_id": "34343l12"
+                }
+            }
+        ]
+    },
+    {
+        "_id": "65150ee5dad0c23473372217",
+        "project_name": "finance analysis",
+        "client_name": "Mike",
+        "project_code": "E-53",
+        "project_notes": "finance analysis notes",
+        "project_logs": [
+            {
+                "log_name": "report generation",
+                "log_id": "343ll352",
+                "log_description": {
+                    "risk_description": [
+                        {
+                            "content": "finance risk description",
+                            "date": "2023-01-02T00:00:00Z",
+                            "id": "34343377322"
+                        }
+                    ],
+                    "control_description": [
+                        {
+                            "content": "finance risk control description",
+                            "date": "2023-04-02T00:00:00Z",
+                            "id": "34343377322"
+                        }
+                    ]
+                },
+                "description_date": "2023-01-02T00:00:00Z",
+                "log_type": "Action",
+                "log_due_date": "2023-02-02T00:00:00Z",
+                "log_status": "closed",
+                "log_tags": [
+                    "finance",
+                    "analysis",
+                    "report"
+                ],
+                "assigned": {
+                    "name": "Mike",
+                    "image": "https://i.ibb.co/QHfKVfL/profile11.jpg",
+                    "assigned_person_id": "34343l13"
+                }
+            }
+        ]
+    },
+    {
+        "_id": "65150ee5dad0c23473372218",
+        "project_name": "research project",
+        "client_name": "Sarah",
+        "project_code": "E-54",
+        "project_notes": "research project notes",
+        "project_logs": [
+            {
+                "log_name": "data collection",
+                "log_id": "343ll353",
+                "log_description": {
+                    "risk_description": [
+                        {
+                            "content": "research risk description",
+                            "date": "2023-02-02T00:00:00Z",
+                            "id": "34343333322"
+                        }
+                    ],
+                    "control_description": [
+                        {
+                            "content": "research risk control description",
+                            "date": "2023-05-02T00:00:00Z",
+                            "id": "34343443322"
+                        }
+                    ]
+                },
+                "description_date": "2023-02-02T00:00:00Z",
+                "log_type": "Action",
+                "log_due_date": "2023-03-02T00:00:00Z",
+                "log_status": "in-progress",
+                "log_tags": [
+                    "research",
+                    "data",
+                    "collection"
+                ],
+                "assigned": {
+                    "name": "Sarah",
+                    "image": "https://i.ibb.co/QHfKVfL/profile12.jpg",
+                    "assigned_person_id": "34343l14"
+                }
+            }
+        ]
+    }
+]
