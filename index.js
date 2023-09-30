@@ -9,7 +9,13 @@ const mongodb = require('mongodb')
 const { ObjectId } = require('mongodb')
 // middleware
 const app = express()
-app.use(cors())
+app.use(cors(
+    {
+        origin: ["http://localhost:5173"],
+        methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+        credentials: true
+    }
+))
 app.use(express.json())
 app.use(express.static('public'))
 
@@ -36,8 +42,6 @@ const connectOurDatabse = async () => {
         },
     });
     const upload = multer({ storage });
-
-
 
     // add new  project
     app.post('/addProject', async (req, res) => {
@@ -100,14 +104,46 @@ const connectOurDatabse = async () => {
             assinged_person_id
         }
         const result = await demoProjects.updateOne(
-            { _id: ("65150ee5dad0c2347337220ewe") }, {
+            { _id: "65150ee5dad0c2347337220ewe", 'project_logs.log_id': "343ll343" }, {
             $push: {
-                'project_logs.0.assigned': data, // Update the image URL
+                'project_logs.$.assigned': data
             }
         }
         );
         res.send(result)
     });
+
+    // get all assinged data for suggest show 
+    app.get('/allAssignedData', async (req, res) => {
+        try {
+            const searchQuery = req.query.searchQuery || '';
+            const assignedData = await demoProjects.aggregate([
+                {
+                    $unwind: '$project_logs',
+                },
+                {
+                    $project: {
+                        _id: 0,
+                        project_name: 1,
+                        assigned: '$project_logs.assigned',
+                    },
+                },
+            ]).toArray();
+            let filteredData = assignedData;
+            // Apply filtering only if a search query is provided
+            if (searchQuery) {
+                filteredData = assignedData.filter((item) => {
+                    const assigned = item.assigned;
+                    return assigned && assigned.name && assigned.name.toLowerCase().includes(searchQuery.toLowerCase());
+                });
+            }
+            res.send(filteredData);
+        } catch (error) {
+            console.log(error)
+        }
+    });
+
+
 
 
     // update log description and control description
