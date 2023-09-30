@@ -144,14 +144,17 @@ const connectOurDatabse = async () => {
     });
 
 
-
-
     // update log description and control description
     app.post('/addDescriptions', async (req, res) => {
         const logId = req.body.logId;
-        // const { riskDescription, controlDescription } = req.body;
+        const taskType = "Action";
         const riskDescription = {
             content: "risk control content heloo",
+            date: "2023-07-02T00:00:00Z",
+            id: "34343333224"
+        }
+        const actiondDescription = {
+            content: "acton control content heloo",
             date: "2023-07-02T00:00:00Z",
             id: "34343333224"
         }
@@ -161,20 +164,73 @@ const connectOurDatabse = async () => {
             id: "34343333242"
         }
 
-        // Update the document with the new risk and control descriptions
-        const result = await demoProjects.updateOne(
-            { _id: logId },
-            {
-                $push: {
-                    'project_logs.0.log_description.risk_description': riskDescription,
-                    'project_logs.0.log_description.control_description': controlDescription,
+        if (taskType === "Risk") {
+            console.log("task")
+            const result = await allProjects.updateOne(
+                { _id: "efaff01f-49cf-4c82-b026-282b8964addd", 'project_logs.log_id': "53d94038-6fda-4d92-8932-8f838245c18f" },
+                {
+                    $push: {
+                        'project_logs.0.log_description.risk_description': riskDescription,
+                        'project_logs.0.log_description.control_description': controlDescription,
+                    }
                 }
-            }
-        );
+            );
 
-        res.send(result);
+            res.send(result);
+        }
+        if (taskType === "Action") {
+            console.log("action")
+            const result = await allProjects.updateOne(
+                { _id: "efaff01f-49cf-4c82-b026-282b8964addd", 'project_logs.log_id': "53d94038-6fda-4d92-8932-8f838245c18f" },
+                {
+                    $push: {
+                        'project_logs.0.log_description.action_description': actiondDescription,
+                        'project_logs.0.log_description.control_description': controlDescription,
+                    }
+                }
+            );
+
+            res.send(result);
+        }
+
+
 
     });
+
+
+    // search and get logs  by log name 
+    app.get('/searchByLogName', async (req, res) => {
+        try {
+          const searchQuery = req.query.searchQuery || 'feature';
+      
+          const assignedData = await demoProjects.aggregate([
+            {
+              $unwind: '$project_logs',
+            },
+            {
+              $project: {
+                _id: 0,
+                log_id: '$project_logs.log_id',
+                log_name: '$project_logs.log_name',
+              },
+            },
+          ]).toArray();
+      
+          // Filter the data based on the search query for log names
+          const filteredData = assignedData.filter((item) => {
+            const logName = item.log_name;
+            return logName && logName.toLowerCase().includes(searchQuery.toLowerCase());
+          });
+      
+          res.send(filteredData);
+        } catch (error) {
+          console.error('Error searching by log name:', error);
+          res.status(500).json({ error: 'Internal server error' });
+        }
+      });
+      
+
+
 
     // filter log by date range
     app.get('/filterLog', async (req, res) => {
