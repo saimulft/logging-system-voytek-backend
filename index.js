@@ -33,7 +33,6 @@ const connectOurDatabse = async () => {
     const client = await MongoClient.connect(process.env.MONGO_URI)
     const users = client.db('voytek').collection('users')
     const allProjects = client.db('voytek').collection('allProjects')
-    const demoProjects = client.db('voytek').collection('demoProjects')
 
     // add new project
     app.post('/add-project', async (req, res) => {
