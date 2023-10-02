@@ -19,7 +19,7 @@ const port = process.env.PORT || 5000;
 app.use(express.json())
 app.use(express.static('public'))
 app.use(cors({
-    origin: ["http://localhost:5173"],
+    origin: "*",
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     credentials: true
 }))
@@ -352,7 +352,7 @@ const connectOurDatabse = async () => {
             const row = {
                 log_name: log.log_name,
                 log_id: log.log_id,
-                description_date:log.description_dat,
+                description_date: log.description_dat,
                 log_type: log.log_type,
                 log_due_date: log.log_due_date,
                 log_status: log.log_status,
@@ -609,8 +609,6 @@ const connectOurDatabse = async () => {
     })
 }
 connectOurDatabse()
-
-
 app.get('/', (req, res) => {
     res.send("Voytek server is running..")
 })
