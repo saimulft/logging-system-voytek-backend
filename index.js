@@ -19,7 +19,7 @@ const port = process.env.PORT || 5000;
 app.use(express.json())
 app.use(express.static('public'))
 app.use(cors({
-    origin: ["http://localhost:5173"],
+    origin: ["http://localhost:5173", "http://134.209.64.241"],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     credentials: true
 }))
@@ -49,9 +49,10 @@ const connectOurDatabse = async () => {
     app.get('/all-projects', async (req, res) => {
         const page = parseInt(req.query.page) || 1;
         const skip = (page - 1) * 8;
-
-        const totalProjects = await allProjects.find().skip(skip).limit(8).toArray()
-        res.send(totalProjects)
+        const totalProjects = await allProjects.find().toArray()
+        const reverse = totalProjects.reverse();
+        const projects = reverse.slice(skip, skip + 8)
+        res.send(projects)
     })
 
     // get single project total logs count
@@ -544,7 +545,8 @@ const connectOurDatabse = async () => {
 
     // authentication related apis
     const verifyUser = (req, res, next) => {
-        const token = req.cookies.token;
+        const token = req.query.token;
+
         if (!token) {
             return res.send({ error: true, message: 'Unauthorized access' })
         }
@@ -594,17 +596,13 @@ const connectOurDatabse = async () => {
             if (!result) return res.send({ error: true, message: 'Password did not matched' })
 
             if (result) {
-                const token = jwt.sign({ email }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '7d' });
-                res.cookie('token', token)
 
-                return res.send({ status: "success", message: "User login successful", userData: userData })
+                const token = jwt.sign({ email }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '7d' });
+                // res.cookie('token', token)
+
+                return res.send({ status: "success", message: "User login successful", userData: userData, token: token })
             }
         });
-    })
-
-    app.get('/signout', (req, res) => {
-        res.clearCookie('token')
-        res.send({ status: 'success', message: 'User signout successful' })
     })
 }
 connectOurDatabse()
