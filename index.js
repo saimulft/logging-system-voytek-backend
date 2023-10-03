@@ -86,7 +86,7 @@ const connectOurDatabse = async () => {
 
         const filteredLogs = singleProject.project_logs.filter(log => log.log_status === logStatus)
 
-        const projectLogs = filteredLogs.slice(skip, skip + 4);
+        const projectLogs = filteredLogs.reverse().slice(skip, skip + 4);
         res.send(projectLogs)
     })
 
@@ -469,6 +469,17 @@ const connectOurDatabse = async () => {
         }
     })
 
+    app.put('/update-log-name', async (req, res) => {
+        const projectId = req.body.projectId;
+        const logId = req.body.logId;
+        const logName = req.body.logName;
+
+        const result = await allProjects.updateOne(
+            { _id: projectId, "project_logs.log_id": logId },
+            { $set: { "project_logs.$.log_name": logName } },
+        );
+        return res.send(result)
+    })
     app.put('/update-log-due-date', async (req, res) => {
         const projectId = req.body.projectId;
         const logId = req.body.logId;
