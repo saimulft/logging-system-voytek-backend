@@ -357,7 +357,7 @@ const connectOurDatabse = async () => {
                 log_due_date: log.log_due_date,
                 log_status: log.log_status,
                 log_tags: log.log_tags.join(', '),
-                assigned_name: log.assigned.name,
+                assigned_name: log.assigned[0].name,
             };
             worksheet.addRow(row);
         });
