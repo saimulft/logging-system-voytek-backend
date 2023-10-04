@@ -339,7 +339,6 @@ const connectOurDatabse = async () => {
         worksheet.columns = [
             { header: 'Log Name', key: 'log_name', width: 20 },
             { header: 'Log ID', key: 'log_id', width: 15 },
-            { header: 'Description Date', key: 'description_date', width: 20 },
             { header: 'Log Type', key: 'log_type', width: 15 },
             { header: 'Log Due Date', key: 'log_due_date', width: 20 },
             { header: 'Log Status', key: 'log_status', width: 15 },
@@ -352,7 +351,6 @@ const connectOurDatabse = async () => {
             const row = {
                 log_name: log.log_name,
                 log_id: log.log_id,
-                description_date: log.description_dat,
                 log_type: log.log_type,
                 log_due_date: log.log_due_date,
                 log_status: log.log_status,
