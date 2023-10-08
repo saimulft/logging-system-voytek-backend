@@ -21,7 +21,7 @@ app.use(express.static('public'))
 app.use(cors({
     origin: ["http://localhost:5173", "http://134.209.64.241"],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-    credentials: true
+    
 }))
 app.use(cookieParser())
 
@@ -40,7 +40,11 @@ const connectOurDatabse = async () => {
         const result = await allProjects.insertOne(projectData)
         res.send(result)
     })
-
+    app.delete('/delete-project',async(req,res)=>{
+        const projectID = req.body.projecId
+        const result = await allProjects.deleteOne({_id : projectID})
+        res.send(result)
+    })
     app.get('/total-projects', async (req, res) => {
         const totalProjects = await allProjects.estimatedDocumentCount()
         res.send({ totalProjects })
@@ -534,6 +538,7 @@ const connectOurDatabse = async () => {
         res.send(user)
     })
 
+
     app.post('/change-password', async (req, res) => {
         const email = req.body.email
         const updatedPass = req.body.password;
@@ -596,8 +601,11 @@ const connectOurDatabse = async () => {
     app.post('/login', async (req, res) => {
         const email = req.body.email;
         const password = req.body.password;
-
         const user = await users.findOne({ email: email })
+
+        if(!user){
+            return res.send({message: "user not found"})
+        }
         const hash = user.password;
         const userData = { userId: user._id, name: user.name, email: user.email }
 
