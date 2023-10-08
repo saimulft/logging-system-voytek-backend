@@ -19,9 +19,13 @@ const port = process.env.PORT || 5000;
 app.use(express.json())
 app.use(express.static('public'))
 app.use(cors({
-    origin: ["http://localhost:5173", "http://134.209.64.241"],
+    origin: ["http://134.209.64.241"],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+<<<<<<< HEAD
     
+=======
+    credentials: false
+>>>>>>> 09acd20f4f90538cfa6682046f6379d2fce34322
 }))
 app.use(cookieParser())
 
@@ -602,9 +606,14 @@ const connectOurDatabse = async () => {
         const email = req.body.email;
         const password = req.body.password;
         const user = await users.findOne({ email: email })
+<<<<<<< HEAD
 
         if(!user){
             return res.send({message: "user not found"})
+=======
+        if(!user){
+        	return res.send({message: "user not found"})
+>>>>>>> 09acd20f4f90538cfa6682046f6379d2fce34322
         }
         const hash = user.password;
         const userData = { userId: user._id, name: user.name, email: user.email }
