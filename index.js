@@ -22,7 +22,7 @@ app.use(express.urlencoded({extended:true,limit:'5mb'}))
 
 app.use(express.static('public'))
 app.use(cors({
-    origin: ["http://104.131.180.80"],
+    origin: ["http://159.89.186.230"],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
 
 }))
